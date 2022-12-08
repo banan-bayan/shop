@@ -1,6 +1,6 @@
 <template>
   <div class="catalog-item">
-    <img :src=" require('@/components/images/' + product_data.image)" alt="img">
+    <!--<img :src=" require('@/components/images/' + product_data.image)" alt="img">-->
     <div class="catalog-item__name"> {{ product_data.name }} </div>
     <div class="catalog-item__price"> {{ product_data.price }} </div>
     <button class="catalog-item__add-to-cart-btn btn">ADD TO CART</button>
@@ -8,7 +8,9 @@
 </template>
 
 <script>
+//import images from "@/components"
 export default {
+  //components: {images},
   name: 'catalog-item',
   props: {
     product_data: {
