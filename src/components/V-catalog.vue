@@ -1,6 +1,5 @@
 <template>
   <div class="v-catalog">
-    <h1>Catalog</h1>
     <div class="v-catalog__list">
       <CatalogItem 
       v-for="product in products"
@@ -23,7 +22,6 @@ export default {
         image: "1.jpg",
         name: "T-shirt 1",
         price: 2100.234234234,
-        article: "T1",
         available: true,
         category: "Мужские"
         },
@@ -32,43 +30,38 @@ export default {
         image: "2.jpg",
         name: "T-shirt 2",
         price: 3150.12312412,
-        article: "T2",
         available: true,
         category: "Женские",
         },
         {
         id: 3,
-        imag: "3.jpg",
-        nam: "T-shirt 3",
-        pric: 4200.51524,
-        articl: "T3",
+        image: "3.jpg",
+        name: "T-shirt 3",
+        price: 4200.51524,
         availabl: false,
-        categor: "Женские",
+        category: "Женские",
         },
         {
         id: 4, 
-        imag: "4.jpg",
-        nam: "T-shirt 4",
-        pric: 5300.1245512,
-        articl: "T4",
-        availabl: true,
-        categor: "Мужские",
+        image: "4.jpg",
+        name: "T-shirt 4",
+        price: 5300.1245512,
+        available: true,
+        category: "Мужские",
         },
         {
         id: 5,
-        imag: "5.jpg",
-        nam: "T-shirt 5",
-        pric: 6500.3522314,
-        articl: "T5",
-        availabl: false,
-        categor: "Женские",
+        image: "5.jpg",
+        name: "T-shirt 5",
+        price: 6500.3522314,
+        available: false,
+        category: "Женские",
         },
         {
         id: 6,
         image: "6.jpeg",
         name: "T-shirt 6",
         price: 8700.4124123,
-        article: "T6",
         available: true,
         category: "Женские",
         }
@@ -79,7 +72,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 $color-1: teal;
-  .catalog {
+  .v-catalog {
     &__list {
       color: $color-1;
       display: flex;

@@ -23,9 +23,6 @@ export default {
 
 <style lang="scss">
   .v-wrapper {
-   display: flex;
-   justify-content: center;
-   align-items: center;
    max-width: 900px;
    margin: 0 auto;
 

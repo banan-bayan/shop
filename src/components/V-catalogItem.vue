@@ -1,8 +1,9 @@
 <template>
   <div class="catalog-item">
-    <p>CatalogItem</p>
-    <p>Price 100$</p>
-    <button>Add stuff</button>
+    <img :src=" require('@/components/images/' + product_data.image)" alt="img">
+    <div class="catalog-item__name"> {{ product_data.name }} </div>
+    <div class="catalog-item__price"> {{ product_data.price }} </div>
+    <button class="catalog-item__add-to-cart-btn btn">ADD TO CART</button>
   </div>
 </template>
 
