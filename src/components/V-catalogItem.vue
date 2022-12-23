@@ -1,23 +1,42 @@
 <template>
   <div class="catalog-item">
-    <!--<img :src=" require('@/components/images/' + product_data.image)" alt="img">-->
-    <div class="catalog-item__name"> {{ product_data.name }} </div>
-    <div class="catalog-item__price"> {{ product_data.price }} </div>
-    <button class="catalog-item__add-to-cart-btn btn">ADD TO CART</button>
+    <img 
+      class="catalog-item__image" 
+      :src="require('@/assets/img/' + product_data.image)" alt="img"
+    > 
+    <div class="catalog-item__name"> 
+      {{ product_data.name }} 
+    </div>
+    <div class="catalog-item__price"> 
+      Price {{ product_data.price }} руб. 
+    </div>
+    <button 
+      class="catalog-item__add-to-cart-btn btn" 
+      @click="sendDataToParent"
+    >
+      ADD TO CART
+    </button>
   </div>
 </template>
 
 <script>
-//import images from "@/components"
 export default {
-  //components: {images},
   name: 'catalog-item',
+  data() {
+    return {
+    }
+  },
   props: {
     product_data: {
       type: Object,
       default() {
         return {}
       },
+    }
+  },
+  methods: {
+    sendDataToParent() {
+      this.$emit('sendId', this.product_data.id)
     }
   }
 }
@@ -34,5 +53,8 @@ $padding: 8px;
     border-radius: $radius;
     margin-bottom: $margin * 2;
     padding: $padding * 2;
+    &__image {
+      width: 100px;
+    }
   }
 </style>

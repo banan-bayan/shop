@@ -2,72 +2,42 @@
   <div class="v-catalog">
     <div class="v-catalog__list">
       <CatalogItem 
-      v-for="product in products"
+      v-for="product in PRODUCTS"
       :key="product.id"
       :product_data="product"
+      @sendId="showChildId"
       />
     </div>
   </div>
 </template>
 <script>
 import CatalogItem from "@/components/V-catalogItem.vue";
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: 'catalog',
   components: {CatalogItem,},
   data() {
     return {
-      products: [
-        {
-        id: 1,
-        image: "1.jpg",
-        name: "T-shirt 1",
-        price: 2100.234234234,
-        available: true,
-        category: "Мужские"
-        },
-        {
-        id: 2,
-        image: "2.jpg",
-        name: "T-shirt 2",
-        price: 3150.12312412,
-        available: true,
-        category: "Женские",
-        },
-        {
-        id: 3,
-        image: "3.jpg",
-        name: "T-shirt 3",
-        price: 4200.51524,
-        availabl: false,
-        category: "Женские",
-        },
-        {
-        id: 4, 
-        image: "4.jpg",
-        name: "T-shirt 4",
-        price: 5300.1245512,
-        available: true,
-        category: "Мужские",
-        },
-        {
-        id: 5,
-        image: "5.jpg",
-        name: "T-shirt 5",
-        price: 6500.3522314,
-        available: false,
-        category: "Женские",
-        },
-        {
-        id: 6,
-        image: "6.jpeg",
-        name: "T-shirt 6",
-        price: 8700.4124123,
-        available: true,
-        category: "Женские",
-        }
-      ]
+      
     }
   },
+  computed: {
+    ...mapGetters([
+      'PRODUCTS'
+    ])
+  },
+  mounted() {
+    this.GET_PRODUCTS_FROM_API()
+        .then((response) =>  response.data ? console.log('ooo right') : console.log('ooo nooooou'))
+  },
+  methods: {
+    ...mapActions([
+      'GET_PRODUCTS_FROM_API'
+    ]),
+    showChildId(data) {
+      console.log(data)
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

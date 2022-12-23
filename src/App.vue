@@ -8,8 +8,12 @@
 import Wrapper from "@/components/V-wrapper.vue";
   export default {
     name: 'app',
-    components: {Wrapper}
+    components: {Wrapper},
+    data() {
+      return {
 
+      }
+    }
   }
 </script>
 
