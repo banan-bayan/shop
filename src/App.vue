@@ -13,7 +13,8 @@ import Wrapper from "@/components/V-wrapper.vue";
       return {
 
       }
-    }
+    },
+    mounted() {}  
   }
 </script>
 

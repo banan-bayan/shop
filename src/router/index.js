@@ -1,15 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router'
+//import { from } from 'core-js/core/array';
+import { createRouter, createWebHistory } from 'vue-router';
+import catalog from '@/components/V-catalog.vue';
+import cart from '@/components/V-cart.vue';
 
 
-const routes = [
-  //{
-   // path: '/about',
-  //  name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-   // component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
- // }
+const routes =  [
+  {
+    path: '/',
+    name: 'catalog',
+    component: catalog,
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: cart,
+    props: true,
+  }
 ]
 
 const router = createRouter({
@@ -18,3 +24,4 @@ const router = createRouter({
 })
 
 export default router
+

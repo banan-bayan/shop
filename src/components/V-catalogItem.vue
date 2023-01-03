@@ -12,7 +12,7 @@
     </div>
     <button 
       class="catalog-item__add-to-cart-btn btn" 
-      @click="sendDataToParent"
+      @click="addToCart"
     >
       ADD TO CART
     </button>
@@ -35,8 +35,8 @@ export default {
     }
   },
   methods: {
-    sendDataToParent() {
-      this.$emit('sendId', this.product_data.id)
+    addToCart() {
+      this.$emit('addToCart', this.product_data)
     }
   }
 }
