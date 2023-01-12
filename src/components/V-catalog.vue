@@ -89,15 +89,15 @@ export default {
     border: solid 3px red;
     &__list {
       color: #545454;
-    //  display: flex;
-    //  flex-wrap: wrap;
+      display: flex;
+      flex-wrap: wrap;
       border: solid 3px purple;
-      
-    //  justify-content: space-around;
-      display: grid;
       gap: 20px;
-      grid-auto-flow: dense;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 500px));
+     // grid-auto-flow: dense;
+      //grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      justify-content: space-around;
+      //display: grid;
+      
      // grid-auto-flow: dense;
       
     }
@@ -106,7 +106,8 @@ export default {
   .header {
     height: 60px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    //flex-direction: row;
     justify-content: space-between;
     border: solid 1px green;
     margin-bottom: $margin * 2;

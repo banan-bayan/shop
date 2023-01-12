@@ -82,8 +82,10 @@ $padding: 8px;
     box-shadow: 0 0 8px 0 #e0e0e0;
     border-radius: $radius;
     border: 5px solid black;
+    //width: 100%;
     &__image {
       border: 5px solid red;
+    //  min-width: 100%;
     }
     &__add-to-cart-btn {
       border: 5px solid green;
