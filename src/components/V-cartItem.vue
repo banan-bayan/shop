@@ -8,7 +8,15 @@
     </div>
     <div class="cart-item__quantity">
       <p>Q-ty:</p>
+      <span 
+        class="decrement"
+        @click="decrementItem"
+      > - </span>
       {{ cart_item_data.quantity }} 
+      <span
+        class="increment"
+        @click="incrementItem"
+      > + </span>
     </div>
     <button 
       class="delete"
@@ -33,13 +41,19 @@ export default {
     }
   },
   mounted() {
-    this.cart_item_data.quantity = 1
+    
   },
   methods: {
     deleteFromCart() {
       this.$emit('deleteFromCart')
+    },
+    decrementItem() {
+
+    },
+    incrementItem() {
+
     }
-  },
+  }
 }
 </script>
 
@@ -54,10 +68,8 @@ export default {
     align-items: center;
     flex-wrap: nowrap;
     box-shadow: 0 0 8px 0 #e0e0e0;
-    padding: $padding * 2;
-    margin: $margin * 2;
-    &__image {
-      max-width: 50px;
-    }
+    //padding: $padding * 2;
+    //margin: $margin * 2;
+    border: 1px solid slateblue;
   }
 </style>

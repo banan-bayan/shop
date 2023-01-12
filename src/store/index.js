@@ -23,19 +23,20 @@ export default createStore({
   mutations: {
     SET_PRODUCTS_TO_STATE: (state, products) => state.products = products,
 
+
     SET_CART: (state, product) => {
       if (state.cart.length) {
         let isProductExists = false;
         state.cart.map(item => {
-          (item.id === product.id) ?
-          (isProductExists = true, item.quantity++) : 
-          (isProductExists = false);
-        });
-        if (!isProductExists) {
-          state.cart.push(product);
-        }   
+          if (item.id === product.id) {
+            isProductExists = true;
+            item.quantity++;
+          }
+        })
+        if (!isProductExists)  state.cart.push(product);
       } else (state.cart.push(product));
     },
+
 
     REMOVE_FROM_CART: (state, index) => state.cart.splice(index, 1),
   },
@@ -67,3 +68,28 @@ export default createStore({
   modules: {
   }
 }) 
+
+
+
+/*
+
+  
+SET_CART: (state, product) => {
+  if (state.cart.length) {
+    let isProductExists = false;
+    state.cart.map(function (item) {
+      if (item.id === product.id) {
+       isProductExists = true;
+       item.quantity++;
+      }
+    })
+    if (!isProductExists) {
+      state.cart.push(product);
+    }   
+  } else {
+    (state.cart.push(product));
+  } 
+}
+
+
+*/

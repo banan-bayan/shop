@@ -9,12 +9,6 @@ import Wrapper from "@/components/V-wrapper.vue";
   export default {
     name: 'app',
     components: {Wrapper},
-    data() {
-      return {
-
-      }
-    },
-    mounted() {}  
   }
 </script>
 
