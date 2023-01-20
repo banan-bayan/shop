@@ -1,8 +1,6 @@
 <template>
+  <headerShop />
   <div class="cart">
-    <router-link :to="{name: 'catalog'}">
-      <div class="cart__link-to-catalog"> BACK </div>
-    </router-link>
     <p v-if="!CART.length"> There are no product in cart </p>
     <cartItem 
       v-for="(item, index) in CART"
@@ -14,15 +12,19 @@
       <p class="total-cost"> TOTAL: {{ cartTotalCost }} $</p>
     </div>
   </div>
+  <footerComponent />
 </template>
 
 <script>
+import headerShop from "@/components/V-headerShop.vue"; 
 import cartItem from "@/components/V-cartItem.vue";
+import footerComponent from "@/components/V-footer.vue";
 //import { ORDER_PRICE } from "@/Constants";
 import { mapActions, mapGetters} from "vuex";
 export default {
   name: 'cart',
-  components: {cartItem},
+  
+  components: {cartItem, headerShop, footerComponent},
   props: {
     cart_data: {
       type: Array,
@@ -62,7 +64,8 @@ export default {
   $padding: 8px;
   $margin: 8px;
   .cart {
-    border: solid 1px red;
+    min-height: 250px;
+  //  border: solid 1px red;
     &__link-to-catalog {
       position: relative;
       margin-left: auto;
@@ -70,7 +73,7 @@ export default {
       right: 10px;
       top: 10px;
       max-width: 60px;
-      border: 1px solid blue;
+    //  border: 1px solid blue;
       padding: $padding * 2;
     }
     &__total {
@@ -81,10 +84,10 @@ export default {
       padding: $padding * 2;
       display: flex;
       justify-content: center;
-      background: rgb(28, 220, 85);
+    //  background: rgb(28, 220, 85);
       color: #fff;
       font-size: 20px;
-      border: solid 1px orangered;   
+    //  border: solid 1px orangered;   
     }
   }
   .total-cost {

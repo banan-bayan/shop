@@ -34,7 +34,7 @@
           class="price__sale-price"
           v-if="product_data.sale"  
         > 
-          {{  product_data.price - (product_data.price * product_data.sale) }} &#8381 
+          {{  this.salePrice }} &#8381 
         </div>
       </div>
     </div>
@@ -44,6 +44,11 @@
 <script>
 export default {
   name: 'catalog-item',
+  data() {
+    return {
+      salePrice: ''
+    }
+  },
   props: {
     product_data: {
       type: Object,
@@ -59,14 +64,16 @@ export default {
   },
   mounted() {
    this.product_data.quantity = 1;
+   this.salePrice = this.product_data.price - (this.product_data.price * this.product_data.sale)
+   
+  },
+  computed: {
+    
   }
 }
 </script>
 
 <style lang="scss">
-// :class="{isPriceSale: product_data.sale}"       
-// :class="{isVisibleNotSalePrice: !product_data.sale}" 
-//  <div :class="{bigSale: product_data.sale > 0}"> {{ product_data.price }}</div>
 $radius: 4px;
 $margin: 8px;
 $padding: 8px;
@@ -92,9 +99,7 @@ $color-3: grey;
   //  border: 2px solid darkblue;
     
   }
-    &__sale {
-      opacity: 0;
-    }
+
     &__info {
       background: rgb(233, 232, 232);
       font-family: 'Raleway';
@@ -129,21 +134,33 @@ $color-3: grey;
   justify-content: space-around;
   margin-top: auto;
   margin-bottom: 10px;
+  
 }
 .price__sale-price {
   font-size: 28px;
   font-family: 'Roboto';
+//  border: 2px solid orange;
+  margin-left: auto;
+  margin-right: 20px;
 }
 .price__all-price {
   font-size: 28px;
   color: $color-1;
   font-family: 'Roboto';
+//  border: 2px solid green;
+  margin-left: auto;
+  margin-right: 20px;
+
 }
 .isPriceSale {
   text-decoration: line-through #FF5A5A;
   color: $color-3;
   font-size: 40px;
+  font-weight: 400;
+  margin-right: auto;
+  margin-left: 20px;
   font-family: 'Roboto';
+//  border: 2px solid red;
 }
 .sale-label {
   background: #FF5A5A;
