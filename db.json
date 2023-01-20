@@ -4,64 +4,64 @@
       "image": "1.jpg",
       "category": "Суккуленты",
       "name": "Алоэ Вера",
-      "price": 21.23,
+      "price": 720,
       "id": "1",
       "available": true,
-      "isSale": false
+      "sale": 0.3
     },
     {
       "image": "2.jpg",
       "category": "Фикусы",
       "name": "Фикус Эластика",
-      "price": 31.59,
+      "price": 900,
       "id": "2",
       "available": true,
-      "isSale": true
+      "sale": 0
     },
     {
       "image": "3.jpeg",
       "category": "Пальма",
       "name": "Пальма",
-      "price": 143.41,
+      "price": 1400,
       "id": "3",
       "available": true,
-      "isSale": false  
+      "sale": 0  
     } ,
     {
       "image": "4.jpg",
       "category": "Фикусы",
       "name": "Фикус Эластика",
-      "price": 53.50,
+      "price": 650,
       "id": "4",
       "available": true,
-      "isSale": false 
+      "sale": 0 
     },
     {
       "image": "5.jpg",
       "category": "Фикусы",
       "name": "Стрелиция Николая",
-      "price": 65.35,
+      "price": 1200,
       "id": "5",
       "available": false,
-      "isSale": true
+      "sale": 0
     },
     {
       "image": "6.jpeg",
       "category": "Фикусы",
       "name": "Фикус Эластика",
-      "price": 87.41,
+      "price": 950,
       "id": "6",
       "available": true,
-      "isSale": false 
+      "sale": 0.5 
     },
     {   
       "image": "7.jpg",
       "category": "Фикусы",
       "name": "Фикус Эластика",
-      "price": 42.99,
+      "price": 1000,
       "id": "7",
       "available": false,
-      "isSale": false 
+      "sale": 0 
     }
     
   ]

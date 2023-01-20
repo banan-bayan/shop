@@ -61,7 +61,6 @@ export default {
 <style lang="scss">
   $padding: 8px;
   $margin: 8px;
- 
   .cart {
     border: solid 1px red;
     &__link-to-catalog {

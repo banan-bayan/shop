@@ -19,9 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
-  .v-wrapper {
-   max-width: 100%;
-  // margin: 0 auto;
+.v-wrapper {
+  max-width: 100%;
   background: rgb(233, 232, 232);
-  }
+}
 </style>

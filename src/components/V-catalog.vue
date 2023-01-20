@@ -1,48 +1,47 @@
 <template>
   <div class="catalog">
-
     <div class="header">
-      <div class="logo">
-        <img 
-        src="@/assets/img/logo.jpg" 
-        alt="logo"
-        class="info__logo"
-        >
-      </div>
-      <div class="header__info">
-        <div class="info-contacts">Контакты</div>
-        <div class="info-advice">Советы по уходу</div>
-        <router-link :to="{name: 'cart'}">
-          <div class="info-order">Оплата и доставка</div>
-        </router-link>
-      </div>
-
-
-      <div class="header__icons">
-        <svgFind class="icons-find" />
-        <svgContacts class="icons-contacts"/>
-
-        <router-link :to="{name: 'cart'}">
-          <div class="icons-link-to-cart">
-            <svgCart>
-              {{ CART.length }} 
-            </svgCart> 
+      <p class="header__logo">plant</p>
+      <div class="header__menu">
+        <div class="header__menu-contacts">
+          Контакты
+          <hr class="header__menu-contacts-hr header__menu-contacts-hr--hover">
+        </div>
+        <div class="header__menu-advice">
+          Советы по уходу
+          <hr class="header__menu-advice-hr header__menu-advice-hr--hover">
+        </div>
+        <router-link class="header__menu-link-to-order" :to="{name: 'cart'}">
+          <div class="header__menu-order">
+            Оплата и доставка
+            <hr class="header__menu-order-hr header__menu-order-hr--hover">
           </div>
         </router-link>
       </div>
       
+
+      <div class="header__icons">
+        <MenuSearch class="header__icons-find" />
+        <MenuContacts class="header__icons-contacts"/>
+
+        <router-link :to="{name: 'cart'}">
+          <div class="header__icons-link-to-cart">
+            <MenuCart>
+              {{ CART.length }} 
+            </MenuCart> 
+          </div>
+        </router-link>
+      </div>
     </div>
-
-
-    <div class="big">
-      <img 
-        src="@/assets/img/big.jpg" 
-        alt="big-photo"
-        class="img-big"
-      >
+    <div class="background-image">
+      <div class="block">
+        <div class="block__title-1">Цветы для</div>
+        <div class="block__title-2">вашего дома</div>
+        <div class="block__text-1"> Растения в кашпо станут красивым и модным дополнением интерьера вашей</div>
+        <div class="block__text-2"> квартиры или офиса</div>
+      </div>
     </div>
-
-    <div class="catalog__list">
+    <div class="list">
       <catalogItem 
         v-for="product in PRODUCTS"
         :key="product.id"
@@ -50,21 +49,26 @@
         @addToCart="addToCart"
       />
     </div>
+    <footer-component />
   </div>
 </template>
+
+
 <script>
-import svgFind from "@/components/icons/SVGfind.vue"
-import svgContacts from "@/components/icons/SVGcontacts.vue"
-import svgCart from "@/components/icons/SVGcart.vue"
+
+import MenuSearch from "@/components/icons/MenuSearch.vue";
+import MenuContacts from "@/components/icons/MenuContacts.vue";
+import MenuCart from "@/components/icons/MenuCart.vue";
 import catalogItem from "@/components/V-catalogItem.vue";
+import footerComponent from "@/components/V-footer.vue";
 import { mapActions, mapGetters } from "vuex";
 export default {
   name: 'catalog',
-  components: {catalogItem,svgFind, svgContacts,svgCart},
+  components: {catalogItem,MenuSearch , MenuContacts, MenuCart, footerComponent,},
   computed: {
     ...mapGetters([
       'PRODUCTS',
-      'CART'
+      'CART',
     ])
   },
   mounted() {
@@ -83,88 +87,182 @@ export default {
 }
 </script>
 <style lang="scss">
-  $padding: 8px;
+  $padding: 5px;
   $margin: 8px;
-  .catalog {
-    border: solid 3px red;
-    &__list {
-      color: #545454;
-      display: flex;
-      flex-wrap: wrap;
-      border: solid 3px purple;
-      gap: 20px;
-     // grid-auto-flow: dense;
-      //grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      justify-content: space-around;
-      //display: grid;
-      
-     // grid-auto-flow: dense;
-      
-    }
-    
+  $color-1: black;
+  $color-2: white;
+  $color-3: grey;
+  
+.catalog {
+  margin: 0;
+} 
+.header {
+  background: $color-2;
+  height: 120px;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $margin * 2;
+  &__logo {
+    font-family: 'Mitr';
+    font-size: 48px;
+    color: #38603C;
+    margin-right: auto;
+    margin-left: 20px;
   }
-  .header {
-    height: 60px;
+  &__menu { 
+    height: 49px;
+    font-size: 20px;
+    color: $color-1;
     display: flex;
-    flex-wrap: wrap;
-    //flex-direction: row;
     justify-content: space-between;
-    border: solid 1px green;
-    margin-bottom: $margin * 2;
-    padding: $padding;
-    &__logo {
-      border: 3px solid darkblue;
+    align-items: center;
+    font-family: 'Raleway';
+    font-weight: 400;
+    width: 50%;
+    padding-left: $padding;
+    padding-right: $padding;
+    padding-top: $padding * 3;
+    padding-bottom: $padding * 2;
+    &-contacts {
+      padding: $padding;
+      &-hr {
+        width: 0%;
+        border: none;
+        border-bottom: 1px solid $color-3;
+        transition: all 0.1s ease 0s;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      &:hover .header__menu-contacts-hr--hover{
+        width: 100%;
+        transition: all 0.4s ease 0s;
+      }
     }
-    &__info {
-      margin-left: auto;
-      margin-right: auto;
-      height: 49px;
-      font-size: 20px;
-      color: #000;
-      display: flex;
-      justify-content: space-around;
-      border: 1px solid darkblue;
-      align-items: center;
-      justify-content: center;
-      //width: 100%;
-      font-family: 'Raleway';
-      font-weight: 400;
+    &-advice {
+      padding: $padding;
+      &-hr {
+        width: 0%;
+        border: none;
+        border-bottom: 1px solid $color-3;
+        transition: all 0.1s ease 0s;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      &:hover .header__menu-advice-hr--hover{
+        width: 100%;
+        transition: all 0.4s ease 0s;
+      }
     }
-    &__icons {
-      min-width: 150px;
-      display: flex;
-      align-items: center;
-    //  justify-content: space-between;
-      margin-left: auto;
-      border: 3px solid yellow;
+    &-order {
+      padding: $padding;
+      &-hr {
+        width: 0%;
+        border: none;
+        border-bottom: 1px solid $color-3;
+        transition: all 0.1s ease 0s;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      &:hover .header__menu-order-hr--hover{
+        width: 100%;
+        transition: all 0.4s ease 0s;
+      }
+    }
+    &-link-to-order {
+      text-decoration: none;
+      color: $color-1;
+      padding: $padding;
     }
   }
-
-    
-    .info-contacts {
-      border: 1px solid black;
+  &__icons {
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    justify-content: space-between;
+    height: 49px;
+    margin-right: 20px;
+    &-find {
+      border: none;
+      border: none;
+      transition: all 0.2s ease 0s;
+      border-radius: 3px;
+      padding: 4px;
+     &:hover {
+       background: #ebeaea;
+      }
     }
-    .info-advice {
-      border: 1px solid black;
+    &-contacts {
+      border: none;
+      transition: all 0.2s ease 0s;
+      border-radius: 3px;
+      padding: 4px;
+      padding-left: 6px;
+      padding-right: 6px;
+      &:hover {
+        background: #ebeaea;
+      }
     }
-    .info-order {
-      border: 1px solid black;
+    &-link-to-cart {
+      margin-top: 3px;
+      border: none;
+      transition: all 0.2s ease 0s;
+      border-radius: 3px;
+      padding: 4px;
+      &:hover {
+        background: #ebeaea;
+      }
     }
-
-    
-    
-    .icons-find {
-      border: 1px solid red;
-    }
-    .icons-contacts {
-      border: 1px solid red;
-    }
-    .icons-link-to-cart {
-      border: 1px solid red;
-    }
-    .img-big {
-    width: 100%;
-   // margin-bottom: 20px;
-   // min-width: 100%;
   }
+}
+.background-image {
+  background-image: url(@/assets/img/big.jpg);
+  width: 100%;
+  color: $color-2;
+  height: 600px;
+}
+.block {
+  padding-top: 60px;
+  padding-left: 100px;
+  width: 50%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  &__title-1 {
+    margin-right: auto;
+    font-size: 56px;
+    color: $color-1;
+    font-family: 'Raleway';
+    font-weight: 700;
+  }
+  &__title-2 {
+    margin-right: auto;
+    font-size: 56px;
+    color: $color-1;
+    font-family: 'Raleway';
+    font-weight: 700;
+  }
+  &__text-1 {
+    color: $color-1;
+    margin-top: auto;
+    margin-bottom: 20px;
+    margin-right: auto;
+    font-family: 'Raleway';
+  }
+  &__text-2 {
+    color: $color-1;
+    margin-right: auto;
+    font-family: 'Raleway';
+  }
+}
+.list {
+  margin-top: 20px;
+  color: #545454;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}  
 </style>
