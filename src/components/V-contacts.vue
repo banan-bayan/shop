@@ -1,11 +1,5 @@
 <template>
-  <headerShop>
-    <router-link
-      class="header__menu-link-to-contacts" 
-      
-    >
-    </router-link>
-  </headerShop>
+  <headerShop />
   <div>
   <p>Горячая линия Боксберри</p>
   <p>Пункты выдачи посылок, пересылаемых компанией Боксберри расположены в более чем 400</p>

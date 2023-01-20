@@ -3,6 +3,7 @@
       <p class="header__logo">plant</p>
       <div class="header__menu">
         <router-link
+          v-if="$route.path !== '/contacts'"
           class="header__menu-link-to-contacts" 
           :to="{name: 'contacts'}"
         >
@@ -12,6 +13,7 @@
           </div>
         </router-link>
         <router-link 
+          v-if="$route.path !== '/advice'"
           class="header__menu-link-to-advice"
           :to="{name: 'advice'}"
         >
@@ -21,6 +23,7 @@
           </div>
         </router-link>
         <router-link 
+          v-if="$route.path !== '/cart'"
           class="header__menu-link-to-order" 
           :to="{name: 'cart'}"
         >
@@ -30,6 +33,7 @@
           </div>
         </router-link>
         <router-link
+          v-if="$route.path !== '/chat'"
           class="header__menu-link-to-chat" 
           :to="{name: 'chat'}"
         >
@@ -38,7 +42,8 @@
             <hr class="header__menu-chat-hr header__menu-chat-hr--hover">
           </div>
         </router-link>
-        <router-link 
+        <router-link
+          v-if="$route.path !== '/'"
           class="header__menu-link-to-catalog" 
           :to="{name: 'catalog'}">
           <div class="header__menu-catalog"> Каталог
