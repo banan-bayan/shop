@@ -12,9 +12,9 @@ export default {
       type: Array,
       default() {
         return []
-      }
+      },
     }
-  } 
+  }
 }
 </script>
 
@@ -22,5 +22,6 @@ export default {
 .v-wrapper {
   max-width: 100%;
   background: rgb(233, 232, 232);
+  border: 2px solid green;
 }
 </style>

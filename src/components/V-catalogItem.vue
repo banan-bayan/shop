@@ -63,6 +63,7 @@ export default {
     }
   },
   mounted() {
+   // console.log(this.product_data)
    this.product_data.quantity = 1;
    this.salePrice = this.product_data.price - (this.product_data.price * this.product_data.sale)
    
@@ -87,6 +88,9 @@ $color-3: grey;
   border-radius: $radius;
   border: 5px solid $color-2;
 //  border: 5px solid green;
+-webkit-box-shadow: 0px 0px 6px 3px rgba(153, 155, 157, 0.56);
+  -moz-box-shadow: 0px 0px 6px 3px rgba(153, 155, 157, 0.56);
+  box-shadow: 0px 0px 6px 3px rgba(153, 155, 157, 0.56);
   
   height: 100%;
   &__image {

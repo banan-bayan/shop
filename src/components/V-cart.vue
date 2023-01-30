@@ -1,6 +1,8 @@
 <template>
   <headerShop />
+  <div class="cart__background-image"></div>
   <div class="cart">
+    
     <p v-if="!CART.length"> There are no product in cart </p>
     <cartItem 
       v-for="(item, index) in CART"
@@ -63,19 +65,19 @@ export default {
 <style lang="scss">
   $padding: 8px;
   $margin: 8px;
+  
+  .cart__background-image {
+    padding: 0;
+    margin: 0;
+    border: solid 1px orangered;  
+    width: 100%;
+    background-image: url(@/assets/img/bigCart.jpg);
+    height: 300px;
+    
+  }
   .cart {
-    min-height: 250px;
-  //  border: solid 1px red;
-    &__link-to-catalog {
-      position: relative;
-      margin-left: auto;
-      margin-bottom: 20px;
-      right: 10px;
-      top: 10px;
-      max-width: 60px;
-    //  border: 1px solid blue;
-      padding: $padding * 2;
-    }
+    min-height: 2500px;
+    border: solid 1px red;
     &__total {
       bottom: 0;
       right: 0;
@@ -87,7 +89,7 @@ export default {
     //  background: rgb(28, 220, 85);
       color: #fff;
       font-size: 20px;
-    //  border: solid 1px orangered;   
+      border: solid 1px orangered;   
     }
   }
   .total-cost {

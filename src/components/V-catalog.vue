@@ -1,8 +1,12 @@
 <template>
   <div class="catalog">
     <headerShop />
-    <div class="background-image">
+    <div class="catalog__background-image">
       <div class="block">
+        <div 
+          class="isOpen"
+          v-if="DROP_MENU"
+          >ВЫ ХОТЕЛИ УЗНАТЬ ХОТЧЕТ ЛИ АНЯ КУШАТЬ ? ГЛУПЫЙ ВОПРОС, ИДИ ПОКОРМИ ЕЁ </div>
         <div class="block__title-1">Цветы для</div>
         <div class="block__title-2">вашего дома</div>
         <div class="block__text-1"> Растения в кашпо станут красивым и модным дополнением интерьера вашей</div>
@@ -29,17 +33,23 @@ import catalogItem from "@/components/V-catalogItem.vue";
 import footerComponent from "@/components/V-footer.vue";
 import { mapActions, mapGetters } from "vuex";
 export default {
+//  data() {
+//    return {
+//  arrNumbers: [1,2, 0, 3, 75, 4, 6, 8, 10, 12]
+//    }
+//  },
   name: 'catalog',
   components: {headerShop, catalogItem, MenuSearch, MenuContacts, MenuCart, footerComponent,},
   computed: {
     ...mapGetters([
       'PRODUCTS',
       'CART',
+      'DROP_MENU'
     ])
   },
   mounted() {
     this.GET_PRODUCTS_FROM_API()
-        .then((response) =>  response.data ? console.log('ooo right') : console.log('ooo nooooou'));
+       .then((response) =>  response.data ? console.log('ooo right') : console.log('ooo nooooou'));
   },
   methods: {
     ...mapActions([
@@ -58,165 +68,31 @@ export default {
   $color-1: black;
   $color-2: white;
   $color-3: grey;
+
+  .isOpen {
+    right: 0;
+    top: 50;
+    position: absolute;
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+    height: 200px;
+    width: 200px;
+    border: 3px solid black;
+    background: yellow;
+  }
+  
   
 .catalog {
   margin: 0;
 } 
-.header {
-  background: $color-2;
-  height: 120px;
-  padding-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: $margin * 2;
-  &__logo {
-    font-family: 'Mitr';
-    font-size: 48px;
-    color: #38603C;
-    margin-right: auto;
-    margin-left: 20px;
-  }
-  &__menu { 
-    height: 49px;
-    font-size: 20px;
-    color: $color-1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Raleway';
-    font-weight: 400;
-    width: 50%;
-    padding-left: $padding;
-    padding-right: $padding;
-    padding-top: $padding * 3;
-    padding-bottom: $padding * 2;
-    &-contacts {
-      padding: $padding;
-      &-hr {
-        width: 0%;
-        border: none;
-        border-bottom: 1px solid $color-3;
-        transition: all 0.1s ease 0s;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      &:hover .header__menu-contacts-hr--hover{
-        width: 100%;
-        transition: all 0.4s ease 0s;
-      }
-    }
-    &-advice {
-      padding: $padding;
-      &-hr {
-        width: 0%;
-        border: none;
-        border-bottom: 1px solid $color-3;
-        transition: all 0.1s ease 0s;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      &:hover .header__menu-advice-hr--hover{
-        width: 100%;
-        transition: all 0.4s ease 0s;
-      }
-    }
-    &-order {
-      padding: $padding;
-      &-hr {
-        width: 0%;
-        border: none;
-        border-bottom: 1px solid $color-3;
-        transition: all 0.1s ease 0s;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      &:hover .header__menu-order-hr--hover{
-        width: 100%;
-        transition: all 0.4s ease 0s;
-      }
-    }
-    &-chat {
-      padding: $padding;
-      &-hr {
-        width: 0%;
-        border: none;
-        border-bottom: 1px solid $color-3;
-        transition: all 0.1s ease 0s;
-        margin-left: auto;
-        margin-right: auto; 
-      } 
-      &:hover .header__menu-chat-hr--hover{
-        width: 100%;
-        transition: all 0.4s ease 0s;
-      } 
-    }
-    &-link-to-order {
-      text-decoration: none;
-      color: $color-1;
-      padding: $padding;
-    }
-    &-link-to-contacts {
-      text-decoration: none;
-      color: $color-1;
-      padding: $padding;
-    }
-    &-link-to-advice {
-      text-decoration: none;
-      color: $color-1;
-      padding: $padding;
-    }
-    &-link-to-chat {
-      text-decoration: none;
-      color: $color-1;
-      padding: $padding;
-    }
-  }
-  &__icons {
-    min-width: 150px;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    justify-content: space-between;
-    height: 49px;
-    margin-right: 20px;
-    &-search {
-      border: none;
-      border: none;
-      transition: all 0.2s ease 0s;
-      border-radius: 3px;
-      padding: 4px;
-     &:hover {
-       background: #ebeaea;
-      }
-    }
-    &-contacts {
-      border: none;
-      transition: all 0.2s ease 0s;
-      border-radius: 3px;
-      padding: 4px;
-      padding-left: 6px;
-      padding-right: 6px;
-      &:hover {
-        background: #ebeaea;
-      }
-    }
-    &-link-to-cart {
-      margin-top: 3px;
-      border: none;
-      transition: all 0.2s ease 0s;
-      border-radius: 3px;
-      padding: 4px;
-      &:hover {
-        background: #ebeaea;
-      }
-    }
-  }
-}
-.background-image {
+
+.catalog__background-image {
   background-image: url(@/assets/img/big.jpg);
   width: 100%;
   color: $color-2;
   height: 600px;
+  border: 2px solid darkblue
 }
 .block {
   padding-top: 60px;

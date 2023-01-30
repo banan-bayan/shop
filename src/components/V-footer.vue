@@ -54,7 +54,7 @@ $color-2: white;
   
   margin-top: 50px;
   background: #333434;
-  height: 255px;
+  height: 205px;
   &__menu {
     display: flex;
     color: $color-2;
@@ -91,14 +91,14 @@ $color-2: white;
     width: 10%;
     margin: $margin $margin * 2 ;
 
-  //  border: 2px solid white;
+ //  border: 2px solid white;
   //  margin-left: 100px;
   }
   &__email {
     display: flex;
     align-items: center;
     width: 100%;
-    margin: $margin * 2 0;
+  //  margin: $margin * 2 0;
     margin-left: auto;
     font-size: 18px;
     font-weight: 400;
@@ -109,7 +109,7 @@ $color-2: white;
     height: 49px;
     width: 20%;
     padding: $padding;
-    margin-right: 300px;  
+    margin-right: 300px; 
   }
   &__social-network {
     width: 15%;
@@ -125,8 +125,9 @@ $color-2: white;
     width: 30%;
     color: $color-2;
     font-family: 'Raleway';
-    margin: $margin $margin * 2 ;
+  //  margin: $margin $margin * 2 ;
     font-size: 18px;
+    margin-left: $margin * 2;
     justify-content: flex-start;
   }
 }

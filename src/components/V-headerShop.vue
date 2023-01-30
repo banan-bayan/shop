@@ -54,10 +54,9 @@
       
 
       <div class="header__icons">
-        <MenuSearch class="header__icons-search" />
-        <router-link 
-          :to="{name: 'contacts'}"
-        >
+        <button @click="openclosemenu"><MenuSearch class="header__icons-search" /></button>
+        
+        <router-link :to="{name: 'contacts'}">
           <MenuContacts class="header__icons-contacts"/>
         </router-link>
         <router-link :to="{name: 'cart'}">
@@ -76,7 +75,12 @@ import MenuSearch from "@/components/icons/MenuSearch.vue";
 import MenuContacts from "@/components/icons/MenuContacts.vue";
 import MenuCart from "@/components/icons/MenuCart.vue";
 export default {
- components: {MenuSearch, MenuContacts, MenuCart,},
+  components: {MenuSearch, MenuContacts, MenuCart,},
+  methods: {
+    openclosemenu() {
+      this.$store.commit('TOGGLE_VISIBLE')
+    }
+  }
 }
 </script>
 
@@ -92,7 +96,10 @@ export default {
   padding-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: $margin * 2;
+  border: 1px solid orangered;
+  //position: sticky;
+  //top: 0;
+  //z-index: 2;
   &__logo {
     font-family: 'Mitr';
     font-size: 48px;

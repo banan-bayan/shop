@@ -1,51 +1,146 @@
 <template>
   <headerShop />
-  <div>
-  <p>Горячая линия Боксберри</p>
-  <p>Пункты выдачи посылок, пересылаемых компанией Боксберри расположены в более чем 400</p>
-  <p>городах России. Большое количество клиентов порождает массу вопросов,</p>
-  <p>как рассчитать стоимость отправления онлайн,</p>
-  <p>какие требования предъявляются к посылке,</p>
-  <p>кто является партнерами компании,</p>
-  <p>как заказать доставку и отслеживать отправление дистанционно и т. д.</p>
-  <p>Служба поддержки создана, чтобы помочь клиентам решить все возникающие проблемы, </p>
-  <p>оказать своевременную и быструю помощь пользователям.</p>
+  <div class="contacts">
+  <div class="contacts__big-contacts"></div>
+ 
+  <div class="info">
+    <div class="number-phone">
+      <div class="phone">Телефон</div>
+      <div class="number">8 123 456 78 90</div>
+    </div>
 
+    <div class="vl"></div>
 
-<p>РЕКЛАМА | SRAVNI.RU</p>
-<p>Телефон горячей линии Боксберри 8-800</p>
-<p>Другие способы связи</p>
-<p>По каким вопросам специалисты смогут помочь?</p>
-<p>По каким вопросам поддержка помочь не сможет</p>
-<p>Время ответа и компетентность специалистов</p>
-<p>Обратиться в службу доставки можно через телефон техподдержки,</p>
-<p>через сайт или социальные сети. Разберем подробнее все способы.</p>
-<p></p>
-<p>Телефон горячей линии Боксберри 8-800</p>
-<p>Самым популярным способом является звонок на бесплатную линию доставки: 8 800 234-80-00.</p>
-
-<p>Его можно найти на официальном сайте компании в интернет: https://boxberry.ru/.</p>
-
-<p>Дополнительный телефон для покупателей в Москве: +7-499-391-56-22</p>
-
-<p>>Другие способы связи</p>
-<p>В зависимости о цели обращения, дополнительные способы связи с компанией будут разными.</p>
-
-<p>Они представлены в разделе «Контакты», расположенном на главной странице сайта:</p>
+    <div class="mail-adress">
+      <div class="adress">Почта</div>
+      <div class="mail">info@plant.ru</div>
+      </div>
   </div>
+
+  <div class="location">
+    <div class="country">РОССИЯ, ЕКАТЕРИНБУРГ</div>
+    <div class="street">620014, ВАЙНЕРА УЛ., Д. 66А </div>
+    <div class="subway">
+      <subwayIcon />
+        <div class="subway-station">
+        ГЕОЛОГИЧЕСКАЯ
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+  
   <footerComponent />
 </template> 
 
 <script>
 import headerShop from "@/components/V-headerShop.vue";
 import footerComponent from "@/components/V-footer.vue";
+import subwayIcon from "@/components/icons/Subway.vue";
 export default {
-  components: {footerComponent, headerShop,},
+  components: {footerComponent, headerShop, subwayIcon},
   name: 'contacts'
 }
 </script>
 
-<style>
+<style lang="scss">
+.contacts {
+  color: black;
+  height: 950px;
+}
+.contacts__big-contacts {
+  width: 100%;
+  height: 290px;
+  background-image: url(@/assets/img/bigContacts.jpg);
+}
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 104px;
+  margin-top: 60px;
+  margin-bottom: 52px;
+}
+.number-phone {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  //border: black 1px solid;
+}
+.number {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Roboto";
+  margin-left: auto;
+  padding: 2px;
   
+}
+.phone {
+  font-size: 17px;
+  margin-left: auto;
+  padding: 2px;
+  
+}
+.mail-adress {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+ // border: red 1px solid;
+}
+
+.mail {
+  font-size: 22px;
+  font-weight: 700;
+  margin-right: auto;
+  padding: 2px;
+}  
+.adress {
+  font-size: 17px;
+  margin-right: auto;
+  padding: 2px;
+}
+.location {
+  justify-content: space-around;
+  display: flex;
+  //border: orange 3px solid;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.vl {
+  border-left: 1px solid black;
+  height: 50px;
+}
+.country {
+//  border: 1px solid black;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Raleway";
+  align-self: center;
+ 
+}
+.street {
+ // border: 1px solid black;
+  font-family: "Raleway";
+  font-size: 20px;
+  align-self: center;
+  
+}
+.subway {
+  display:  flex;
+  justify-content: space-between;
+ // border: 1px solid black;
+  font-family: "Roboto";
+  height: 35px;
+}
+.subway-station {
+ // border: 1px solid red;
+  font-family: "Roboto";
+  font-size: 20px;
+  align-self: center;
+  margin-left: 20px;
+}
 
 </style>  
