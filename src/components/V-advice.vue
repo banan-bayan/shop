@@ -47,7 +47,7 @@ export default {
   
   &__big-image {
     background-image: url(@/assets/img/bigAdvice.jpg);
-    border: 2px solid red;
+  //  border: 2px solid red;
     width: 100%;
     height: 250px;
   }
@@ -63,7 +63,7 @@ export default {
   border: 5px solid white;
   margin: 10px;
   margin-right: 80px;
-  width: 20%;
+  width: 30%;
   height: 60%;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 6px 3px rgba(153, 155, 157, 0.56);
@@ -77,7 +77,7 @@ export default {
   font-family: "Raleway";
   text-align: left;
   font-size: 16px;
-  width: 80%;
+  width: 70%;
   &__name {
   //  border: 2px solid green;
     font-size: 24px;

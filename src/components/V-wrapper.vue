@@ -22,6 +22,25 @@ export default {
 .v-wrapper {
   max-width: 100%;
   background: rgb(233, 232, 232);
-  border: 2px solid green;
+  border: 3px solid green;
+  margin: 0px 10px;
+}
+@media (max-width: 1200px) {
+  .v-wrapper {
+    max-width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media(max-width: 992px) {
+  .v-wrapper {
+    max-width: 750px;
+  }
+}
+@media(max-width: 767px) {
+  .v-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 </style>

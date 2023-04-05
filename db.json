@@ -1,14 +1,6 @@
 {
   "products": [
-    {
-      "image": "1.jpg",
-      "category": "Пальма",
-      "name": "Пальма",
-      "price": 1400,
-      "id": "1",
-      "available": true,
-      "sale": 0  
-    } ,
+   
     {
       "image": "2.jpg",
       "category": "Фикусы",

@@ -2,18 +2,19 @@
   <div class="catalog">
     <headerShop />
     <div class="catalog__background-image">
-      <div class="block">
-        <div 
-          class="isOpen"
-          v-if="DROP_MENU"
-          >ВЫ ХОТЕЛИ УЗНАТЬ ХОТЧЕТ ЛИ АНЯ КУШАТЬ ? ГЛУПЫЙ ВОПРОС, ИДИ ПОКОРМИ ЕЁ </div>
-        <div class="block__title-1">Цветы для</div>
-        <div class="block__title-2">вашего дома</div>
-        <div class="block__text-1"> Растения в кашпо станут красивым и модным дополнением интерьера вашей</div>
-        <div class="block__text-2"> квартиры или офиса</div>
+      <div class="catalog__block">
+        <div class="isOpen" v-if="DROP_MENU">ВЫ ХОТЕЛИ УЗНАТЬ ХОТЧЕТ ЛИ АНЯ КУШАТЬ ? ГЛУПЫЙ ВОПРОС, ИДИ ПОКОРМИ ЕЁ </div>
+        <div class="catalog__block-title">
+          <p>Цветы для</p>  
+          <p>вашего дома</p>
+        </div>
+        <div class="catalog__block-text">
+          <p>Растения в кашпо станут красивым и модным дополнением интерьера вашей</p> 
+          <p>квартиры или офиса</p> 
+        </div>
       </div>
     </div>
-    <div class="list">
+    <div class="catalog__list">
       <catalogItem 
         v-for="product in PRODUCTS"
         :key="product.id"
@@ -33,11 +34,7 @@ import catalogItem from "@/components/V-catalogItem.vue";
 import footerComponent from "@/components/V-footer.vue";
 import { mapActions, mapGetters } from "vuex";
 export default {
-//  data() {
-//    return {
-//  arrNumbers: [1,2, 0, 3, 75, 4, 6, 8, 10, 12]
-//    }
-//  },
+
   name: 'catalog',
   components: {headerShop, catalogItem, MenuSearch, MenuContacts, MenuCart, footerComponent,},
   computed: {
@@ -80,61 +77,107 @@ export default {
     width: 200px;
     border: 3px solid black;
     background: yellow;
-  }
-  
-  
+  } 
 .catalog {
+  font-family: 'Raleway';
   margin: 0;
+  &__background-image {
+    background-image: url(@/assets/img/big.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    color: $color-2;
+    height: 500px;
+    margin-bottom: 30px;
+  }
+  &__block {
+    padding-left: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: $color-1;
+    &-title {
+      margin-right: auto;
+      font-size: 5rem;
+      font-weight: 700;
+      text-align: start;
+    }
+    &-text {
+      text-align: start;
+    }
+  }
+  &__list {
+    margin-top: 20px;
+    color: #545454;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+  }
 } 
-
-.catalog__background-image {
-  background-image: url(@/assets/img/big.jpg);
-  width: 100%;
-  color: $color-2;
-  height: 600px;
-  border: 2px solid darkblue
-}
-.block {
-  padding-top: 60px;
-  padding-left: 100px;
-  width: 50%;
-  height: 55%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 100px;
-  &__title-1 {
-    margin-right: auto;
-    font-size: 56px;
-    color: $color-1;
-    font-family: 'Raleway';
-    font-weight: 700;
-  }
-  &__title-2 {
-    margin-right: auto;
-    font-size: 56px;
-    color: $color-1;
-    font-family: 'Raleway';
-    font-weight: 700;
-  }
-  &__text-1 {
-    color: $color-1;
-    margin-top: auto;
-    margin-bottom: 20px;
-    margin-right: auto;
-    font-family: 'Raleway';
-  }
-  &__text-2 {
-    color: $color-1;
-    margin-right: auto;
-    font-family: 'Raleway';
+@media (max-width: 1200px) {
+  .catalog {
+    max-width: 970px;
+    &__background-image {
+      height: 400px;
+      background: url(@/assets/img/big.jpg);
+      background-size: 60% 100%;
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+    &__block {
+      &-title {
+      font-size: 4rem;
+      }
+      &-text {
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+    }
   }
 }
-.list {
-  margin-top: 20px;
-  color: #545454;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
-}  
+@media(max-width: 992px) {
+  .catalog {
+    max-width: 750px;
+    &__background-image {
+      color: $color-2;
+      height: 300px;
+    }
+    &__block {
+      padding-left: 30px;
+      &-title {
+        margin-right: auto;
+        font-size: 3rem;
+      }
+      &-text {
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+@media(max-width: 767px) {
+  .catalog {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    &__background-image {
+      background-size: 90% 100%;
+      width: 100%;
+      height: 200px;
+    }
+    &__block {
+      padding-left: 16%;
+      &-title {
+        font-size: 2rem;
+        align-self: flex-start;
+      }
+      &-text {
+        font-size: 10px;
+      }
+    }
+  }
+}
 </style>
