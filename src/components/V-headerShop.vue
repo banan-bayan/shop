@@ -1,31 +1,4 @@
 <template>
-
-  <div class="header-touch2" v-if="show">
-    <div class="header-touch2__content">
-      <slot></slot>
-    </div>
-  </div>
-  
-
-
-
-
-  <div class="header-touch">
-    <transition name="fade" mode="out-in">
-      <div class="header-touch__menu" key="menu" v-if="!show" @click="show = !show">
-        <Burger /> 
-      </div>
-      <div class="header-touch__clear" key="clear" v-else @click="show = !show">
-        
-      </div>
-    </transition>
-    <transition name="fade">
-      <ul v-if="show">
-        <li v-for="item in items"> {{ item }}</li>
-      </ul>
-    </transition>
-  </div>
-
   <div class="header">
     <p class="header__logo">plant</p>
       <div class="header__menu">
