@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="catalog__list">
-      <catalogItem 
+      <catalogItem
         v-for="product in PRODUCTS"
         :key="product.id"
         :product_data="product"

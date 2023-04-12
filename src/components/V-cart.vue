@@ -116,23 +116,23 @@ export default {
 .cart {
   margin-left: 50px;
   min-height: 1000px;
-  border: solid 1px red;
+  //border: solid 1px red;
   &__total {
     border-radius: 15px;
     background: white;
     border: 2px solid rgb(225, 223, 223);
     width: 30%;
-    height: 500px;
+    height: 600px;
     color: rgb(47, 47, 47);
     font-size: 40px;
     -webkit-box-shadow: 0px -1px 17px -8px rgb(85, 85, 85) inset;
     -moz-box-shadow: 0px -1px 17px -8px rgb(85, 85, 85)inset;
     box-shadow: 0px -1px 17px -8px rgb(85, 85, 85) inset;
-    position: sticky;
-    top: 0;
+    position: absolute;
+    bottom: -500px;
     right: 20px;
     margin-left: auto;
-    border: 1px solid red;
+    //border: 1px solid red;
   }
   &__length-items {
     font-size: 40px;
@@ -183,16 +183,12 @@ export default {
   margin-bottom: 20px;
   margin-left: 20px;
   font-family: 'Raleway';
-//  border: 1px solid red;
-//border: 1px solid black;
   &-text {
     margin-right: auto;
-  //  border: 1px solid green;
   }
   &-price {
     margin-left: auto;
     margin-right: 20px;
-  //  border: 1px solid green;
     font-family: 'Roboto';
   }
 }
@@ -203,18 +199,15 @@ export default {
   font-size: 20px;
   display: flex;
   font-family: 'Raleway';
- // border: 1px solid black;
   margin-bottom: 20px;
- margin-left: 60px;
+  margin-left: 60px;
   &-text {
     margin-right: auto;
-   // border: 1px solid green;
   }
   &-price {
     font-family: 'Roboto';
     margin-left: auto;
     margin-right: 20px;
-   // border: 1px solid green;
   }
 }
 
@@ -223,17 +216,14 @@ export default {
   font-size: 12px;
   font-family: 'Raleway';
   display: flex;
-  //border: 1px solid black;
   &-text {
     margin-right: auto;
     margin-left: 60px;
-   // border: 1px solid green;
   }
   &-cost {
     font-family: 'Roboto';
     margin-left: auto;
     margin-right: 20px;
-   // border: 1px solid green;
   }
 }
 .order-summary {
@@ -242,9 +232,8 @@ export default {
   margin: 20px 20px;
   letter-spacing: 2px;
   text-align: start;
- // border: 1px solid black;
 }
-
+/*
 @media (max-width: 768px) {
   .cart {
     max-width: 768px;
@@ -264,7 +253,7 @@ export default {
     position: sticky;
     top: 0;
     right: 20px;
-    border: 1px solid red;
+
     }
     &__background-image {
      padding: 0;
@@ -276,4 +265,5 @@ export default {
 }
   }
 }
+*/
 </style>

@@ -32,16 +32,20 @@
             <hr class="header__menu-order-hr header__menu-order-hr--hover">
           </div>
         </router-link>
-        <router-link
-          v-if="$route.path !== '/chat'"
-          class="header__menu-link-to-chat" 
-          :to="{name: 'chat'}"
-        >
-          <div class="header__menu-chat">
-            Оставить отзыв
-            <hr class="header__menu-chat-hr header__menu-chat-hr--hover">
-          </div>
-        </router-link>
+
+<!--
+                                                                               <router-link
+                                                                                 v-if="$route.path !== '/chat'"
+                                                                                 class="header__menu-link-to-chat" 
+                                                                                 :to="{name: 'chat'}"
+                                                                               >
+                                                                                 <div class="header__menu-chat">
+                                                                                   Оставить отзыв
+                                                                                   <hr class="header__menu-chat-hr header__menu-chat-hr--hover">
+                                                                                 </div>
+                                                                               </router-link>
+
+             -->                                                                  
         <router-link
           v-if="$route.path !== '/'"
           class="header__menu-link-to-catalog" 
@@ -53,9 +57,11 @@
       </div>
       
 
+    <!--
       <div class="header__icons">
         <button @click="openclosemenu"><MenuSearch class="header__icons-search" /></button>
-        
+
+
         <router-link :to="{name: 'contacts'}">
           <MenuContacts class="header__icons-contacts"/>
         </router-link>
@@ -65,34 +71,44 @@
           </div>
         </router-link>
       </div>
+      -->
     </div>
+  
+
 </template> 
 
 <script>
-import MenuSearch from "@/components/icons/MenuSearch.vue";
-import MenuContacts from "@/components/icons/MenuContacts.vue";
-import MenuCart from "@/components/icons/MenuCart.vue";
-import Burger from "@/components/icons/Burger.vue";
+//import MenuSearch from "@/components/icons/MenuSearch.vue";
+//import MenuContacts from "@/components/icons/MenuContacts.vue";
+//import MenuCart from "@/components/icons/MenuCart.vue";
+// import Burger from "@/components/icons/Burger.vue";
 export default {
-  components: {MenuSearch, MenuContacts, MenuCart, Burger},
+  //components: {MenuSearch, MenuContacts, MenuCart,},
+  /*
   props: {
     show: {
       type: Boolean,
       default: false
     }
   },
+  */
+  /*
   data() {
     return {
       items: ['Контакты', 'Советы по уходу',  'Оплата и доставка',  'Оставить отзыв', 'Каталог'],
       show: true,
     }
   },
+  */
+ /*
   methods: {
     openclosemenu() {
       this.$store.commit('TOGGLE_VISIBLE');
     }
   },
+  */
 }
+
 </script>
 
 <style lang="scss">
@@ -101,7 +117,7 @@ export default {
   $color-1: black;
   $color-2: white;
   $color-3: grey;
-
+  /*
 .header-touch2 {
   top: 0;
   left: 0;
@@ -119,11 +135,8 @@ export default {
   padding: $padding * 2;
  }
 }
-
-
-
-
-
+*/
+/*
 .header__options-menu {
   border: 1px solid green;
 }
@@ -134,22 +147,23 @@ export default {
 .header-touch {
   display: none;
 }
+*/
 
 .header {
   background: $color-2;
-  height: 120px;
+  height: 100px;
   padding-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid black;
+  //border: 1px solid black;
   &__logo {
     font-family: 'Mitr';
-    font-size: 55px;
+    font-size: 60px;
     color: #38603C;
     //margin-right: auto;
-    margin-right: 20px;
-    margin-left: 20px;
-    border: 1px solid gold;
+    margin-right: 60px;
+    margin-left: 10px;
+    //border: 1px solid gold;
   }
   &__menu { 
     height: 49px;
@@ -160,7 +174,7 @@ export default {
     align-items: center;
     font-family: 'Raleway';
     font-weight: 400;
-    width: 50%;
+    width: 70%;
     padding-left: $padding;
     padding-right: $padding;
     padding-top: $padding * 3;
@@ -210,6 +224,7 @@ export default {
         transition: all 0.4s ease 0s;
       }
     }
+    /*
     &-chat {
       padding: $padding;
       &-hr {
@@ -225,6 +240,7 @@ export default {
         transition: all 0.4s ease 0s;
       } 
     }
+    */
     &-catalog {
       padding: $padding;
       &-hr {
@@ -255,17 +271,20 @@ export default {
       color: $color-1;
       padding: $padding;
     }
+    /*
     &-link-to-chat {
       text-decoration: none;
       color: $color-1;
       padding: $padding;
     }
+    */
     &-link-to-catalog {
       text-decoration: none;
       color: $color-1;
       padding: $padding;
     }
   }
+  /*
   &__icons {
     min-width: 150px;
     display: flex;
@@ -276,7 +295,7 @@ export default {
     margin-right: 20px;
     border: 1px solid black;
     ///////////////
-    display: none;
+     display: none;
     //////////////
     &-search {
       border: none;
@@ -309,9 +328,10 @@ export default {
       }
     }
   }
+  */
 }
 
-
+/*
 @media (max-width: 768px) {
   .header {
     display: none;
@@ -376,4 +396,5 @@ export default {
     
   }
 }
+*/
 </style>  

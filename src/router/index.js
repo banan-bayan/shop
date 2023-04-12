@@ -1,16 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import catalog from '@/components/V-catalog.vue';
 import contacts from '@/components/V-contacts.vue';
-import cart from '@/components/V-cart.vue';
-import chat from '@/components/V-postForm.vue';
+import cart from '@/components/V-cart.vue'; 
 import  advice from '@/components/V-advice.vue';
 const routes =  [
-
-  {
-    path: '/contacts',
-    name: 'contacts',
-    component: contacts,
-  },
   {
     path: '/contacts/',
     name: 'contacts',
@@ -32,13 +25,6 @@ const routes =  [
     component: cart,
     props: true,
   },
-  {
-    path: '/chat/',
-    name: 'chat',
-    component: chat,
-    props: true,
-  },
- 
 ]
 
 const router = createRouter({

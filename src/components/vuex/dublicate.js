@@ -37,35 +37,3 @@ export default createStore({
   modules: {}
 }) 
 
-
-
-/*
-
-"advices": [
-  {   
-    "image": "11.jpg",
-    "category": "Монстеры",
-    "name": "Монстера Адансона",
-    "id": "12"
-  },
-  {   
-    "image": "10.jpg",
-    "category": "Суккуленты",
-    "name": "Флорариум",
-    "id": "13"
-  },
-  {   
-    "image": "7.jpg",
-    "category": "Фикусы",
-    "name": "Фикус Эластика",
-    "id": "14"
-  },
-  {
-    "image": "3.jpeg",
-    "category": "Суккуленты",
-    "name": "Алоэ Вера",
-    "id": "15"
-  }
-]
-
-*/
