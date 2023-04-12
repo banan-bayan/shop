@@ -14,7 +14,6 @@ import Wrapper from "@/components/V-wrapper.vue";
 
 <style lang="scss"> 
 
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -3,7 +3,6 @@
     <headerShop />
     <div class="catalog__background-image">
       <div class="catalog__block">
-        <div class="isOpen" v-if="DROP_MENU">ВЫ ХОТЕЛИ УЗНАТЬ ХОТЧЕТ ЛИ АНЯ КУШАТЬ ? ГЛУПЫЙ ВОПРОС, ИДИ ПОКОРМИ ЕЁ </div>
         <div class="catalog__block-title">
           <p>Цветы для</p>  
           <p>вашего дома</p>
@@ -66,18 +65,6 @@ export default {
   $color-2: white;
   $color-3: grey;
 
-  .isOpen {
-    right: 0;
-    top: 50;
-    position: absolute;
-    color: black;
-    font-size: 25px;
-    font-weight: 700;
-    height: 200px;
-    width: 200px;
-    border: 3px solid black;
-    background: yellow;
-  } 
 .catalog {
   font-family: 'Raleway';
   margin: 0;

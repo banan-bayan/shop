@@ -5,12 +5,12 @@ import cart from '@/components/V-cart.vue';
 import  advice from '@/components/V-advice.vue';
 const routes =  [
   {
-    path: '/contacts/',
+    path: '/contacts',
     name: 'contacts',
     component: contacts,
   },
   {
-    path: '/advice/',
+    path: '/advice',
     name: 'advice',
     component: advice,
   },
@@ -20,7 +20,7 @@ const routes =  [
     component: catalog,
   },
   {
-    path: '/cart/',
+    path: '/cart',
     name: 'cart',
     component: cart,
     props: true,

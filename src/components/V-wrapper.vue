@@ -22,7 +22,6 @@ export default {
 .v-wrapper {
   max-width: 100%;
   background: rgb(233, 232, 232);
-  //border: 3px solid green;
   margin: 0px 10px;
 }
 @media (max-width: 1200px) {

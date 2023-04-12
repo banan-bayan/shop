@@ -67,7 +67,6 @@ export default {
   display: flex;
   width: 20%;
   flex-direction: column;
-  //border: black 1px solid;
 }
 .number {
   font-size: 22px;
@@ -75,7 +74,6 @@ export default {
   font-family: "Roboto";
   margin-left: auto;
   padding: 2px;
-  
 }
 .phone {
   font-size: 17px;
@@ -87,9 +85,7 @@ export default {
   display: flex;
   width: 20%;
   flex-direction: column;
- // border: red 1px solid;
 }
-
 .mail {
   font-size: 22px;
   font-weight: 700;
@@ -104,7 +100,6 @@ export default {
 .location {
   justify-content: space-around;
   display: flex;
-  //border: orange 3px solid;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -114,7 +109,6 @@ export default {
   height: 50px;
 }
 .country {
-//  border: 1px solid black;
   font-size: 22px;
   font-weight: 700;
   font-family: "Raleway";
@@ -122,7 +116,6 @@ export default {
  
 }
 .street {
- // border: 1px solid black;
   font-family: "Raleway";
   font-size: 20px;
   align-self: center;
@@ -131,16 +124,13 @@ export default {
 .subway {
   display:  flex;
   justify-content: space-between;
- // border: 1px solid black;
   font-family: "Roboto";
   height: 35px;
 }
 .subway-station {
- // border: 1px solid red;
   font-family: "Roboto";
   font-size: 20px;
   align-self: center;
   margin-left: 20px;
 }
-
 </style>  

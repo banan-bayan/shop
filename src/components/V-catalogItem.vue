@@ -90,14 +90,11 @@ $color-3: grey;
   -moz-box-shadow: 0px 0px 6px 3px rgba(153, 155, 157, 0.56);
   box-shadow: 0px 0px 6px 3px rgba(153, 155, 157, 0.56);
   height: 100%;
-  //  border: 5px solid green;
   &__image {
     border-radius: $radius;
-    //border: 2px solid gold;
   }
   &__add-to-cart-btn {
     height: 89%;
-    //border: 2px solid darkblue;
   }
   &__info {
     background: rgb(233, 232, 232);
@@ -106,7 +103,6 @@ $color-3: grey;
     display: flex;
     flex-direction: column;
     height: 120px;
-    //border: 2px solid red;
     &-category {
       color: $color-1;
       font-size: 16px;
@@ -135,7 +131,6 @@ $color-3: grey;
 .price__sale-price {
   font-size: 28px;
   font-family: 'Roboto';
-//  border: 2px solid orange;
   margin-left: auto;
   margin-right: 20px;
 }
@@ -143,7 +138,6 @@ $color-3: grey;
   font-size: 28px;
   color: $color-1;
   font-family: 'Roboto';
-//  border: 2px solid green;
   margin-left: auto;
   margin-right: 20px;
 
@@ -156,7 +150,6 @@ $color-3: grey;
   margin-right: auto;
   margin-left: 20px;
   font-family: 'Roboto';
-//  border: 2px solid red;
 }
 .sale-label {
   background: #FF5A5A;
@@ -190,7 +183,6 @@ $color-3: grey;
       display: flex;
       flex-direction: column;
       height: 120px;
-      //border: 2px solid red;
       &-category {
         color: $color-1;
         font-size: 16px;
@@ -209,7 +201,6 @@ $color-3: grey;
     }
     &__price {
       color: $color-1;
-    //  font-size: 40px;
       font-family: 'Roboto';
       font-weight: 700;
       display: flex;
@@ -234,13 +225,10 @@ $color-3: grey;
   }
   .price__sale-price {
     font-size: 24px;
-  //  margin-right: 20px;
-  //  border: 1px solid green;
   }
   .price__all-price {
     font-size: 24px;
-   margin-left: 0px;
-  //  border: 1px solid red;
+   margin-left: 0;
   }
 }
 </style>

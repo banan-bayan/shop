@@ -44,7 +44,6 @@
 import headerShop from "@/components/V-headerShop.vue"; 
 import cartItem from "@/components/V-cartItem.vue";
 import footerComponent from "@/components/V-footer.vue";
-//import { ORDER_PRICE } from "@/Constants";
 import { mapActions, mapGetters} from "vuex";
 export default {
   name: 'cart',
@@ -111,12 +110,10 @@ export default {
   width: 100%;
   background-image: url(@/assets/img/bigCart.jpg);
   height: 290px;
-      //  border: solid 1px orangered; 
 }
 .cart {
   margin-left: 50px;
   min-height: 1000px;
-  //border: solid 1px red;
   &__total {
     border-radius: 15px;
     background: white;
@@ -132,7 +129,6 @@ export default {
     bottom: -500px;
     right: 20px;
     margin-left: auto;
-    //border: 1px solid red;
   }
   &__length-items {
     font-size: 40px;
@@ -147,7 +143,6 @@ export default {
   color: rgb(0, 0, 0);
   letter-spacing: 5px;
 }
-
 .cart__input {
   margin-left: auto;
   margin-right: auto;
@@ -161,7 +156,6 @@ export default {
   -webkit-box-shadow: 0px -1px 17px -8px rgba(2, 2, 2, 0.67) inset;
   -moz-box-shadow: 0px -1px 17px -8px rgba(2, 2, 2, 0.67) inset;
   box-shadow: 0px -1px 17px -8px rgba(2, 2, 2, 0.67) inset;
- // border: 1px solid black;
   margin-bottom: 50px;
   margin-top: 30px;
   border-radius: 8px;
@@ -170,10 +164,6 @@ export default {
   &::placeholder {
     color: black;
     font-size: .8rem;
-   // padding-top: 10px;
-  //  padding-bottom: 10px;
-   // padding-left: 10px;
-  //  border: 1px solid;
     font-family: 'Raleway'; 
   }
 }
@@ -192,9 +182,6 @@ export default {
     font-family: 'Roboto';
   }
 }
-
-
-
 .total-cost-finaly {
   font-size: 20px;
   display: flex;
@@ -210,7 +197,6 @@ export default {
     margin-right: 20px;
   }
 }
-
 .nds {
   color: grey;
   font-size: 12px;
@@ -233,7 +219,6 @@ export default {
   letter-spacing: 2px;
   text-align: start;
 }
-/*
 @media (max-width: 768px) {
   .cart {
     max-width: 768px;
@@ -261,9 +246,8 @@ export default {
      width: 100%;
      background-image: url(@/assets/img/bigCart.jpg);
      height: 190px;
-      //  border: solid 1px orangered; 
 }
   }
 }
-*/
+
 </style>

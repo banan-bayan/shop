@@ -47,14 +47,12 @@ export default {
   
   &__big-image {
     background-image: url(@/assets/img/bigAdvice.jpg);
-  //  border: 2px solid red;
     width: 100%;
     height: 250px;
   }
 }
 
 .advice__item {
-//  border: 2px solid blue;
   display: flex;
   margin-bottom: 80px;
   margin-left: 90px;
@@ -79,13 +77,11 @@ export default {
   font-size: 16px;
   width: 70%;
   &__name {
-  //  border: 2px solid green;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 30px;
   }
   &__light {
-  ////  border: 2px solid red;
     line-height: 200%;
     text-align: left;
     padding: 3px;
@@ -99,14 +95,12 @@ export default {
     letter-spacing: 1px;
   }
   &__humidity {
-  //  border: 2px solid yellow;
     margin-bottom: 0px;
     line-height: 25px;
     letter-spacing: 1px;
   }
 }
 b {
-//  border: 1px solid black;
   letter-spacing: 0px;
   margin: 0;
 }
