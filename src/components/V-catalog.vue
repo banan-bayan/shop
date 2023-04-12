@@ -26,16 +26,13 @@
 </template>
 <script>
 import headerShop from "@/components/V-headerShop.vue"
-import MenuSearch from "@/components/icons/MenuSearch.vue";
-import MenuContacts from "@/components/icons/MenuContacts.vue";
-import MenuCart from "@/components/icons/MenuCart.vue";
 import catalogItem from "@/components/V-catalogItem.vue";
 import footerComponent from "@/components/V-footer.vue";
 import { mapActions, mapGetters } from "vuex";
 export default {
 
   name: 'catalog',
-  components: {headerShop, catalogItem, MenuSearch, MenuContacts, MenuCart, footerComponent,},
+  components: {headerShop, catalogItem,  footerComponent,},
   computed: {
     ...mapGetters([
       'PRODUCTS',
@@ -45,7 +42,7 @@ export default {
   },
   mounted() {
     this.GET_PRODUCTS_FROM_API()
-       .then((response) =>  response.data ? console.log('ooo right') : console.log('ooo nooooou'));
+       .then((response) =>  response.data ? console.log('DONE') : console.log('ERROR'));
   },
   methods: {
     ...mapActions([
