@@ -81,7 +81,6 @@ $color-1: black;
 $color-2: white;
 $color-3: grey;
 
-
 .catalog-item {
   box-shadow: 0 0 8px 0 #e0e0e0;
   border-radius: $radius;
@@ -163,8 +162,6 @@ $color-3: grey;
   margin-top: 20px;
   font-family: 'Roboto';
 }
-
-
 
 @media(max-width: 767px) {
   .catalog-item {

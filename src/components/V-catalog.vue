@@ -37,7 +37,6 @@ export default {
     ...mapGetters([
       'PRODUCTS',
       'CART',
-      'DROP_MENU'
     ])
   },
   mounted() {

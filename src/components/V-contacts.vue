@@ -1,38 +1,27 @@
 <template>
   <headerShop />
   <div class="contacts">
-  <div class="contacts__big-contacts"></div>
- 
-  <div class="info">
-    <div class="number-phone">
-      <div class="phone">Телефон</div>
-      <div class="number">8 123 456 78 90</div>
-    </div>
-
-    <div class="vl"></div>
-
-    <div class="mail-adress">
-      <div class="adress">Почта</div>
-      <div class="mail">info@plant.ru</div>
+    <div class="contacts__big-contacts"></div>
+    <div class="info">
+      <div class="number-phone">
+        <div class="number-phone__phone">Телефон</div>
+        <div class="number-phone__number">8 123 456 78 90</div>
       </div>
-  </div>
-
-  <div class="location">
-    <div class="country">РОССИЯ, ЕКАТЕРИНБУРГ</div>
-    <div class="street">620014, ВАЙНЕРА УЛ., Д. 66А </div>
-    <div class="subway">
-      <subwayIcon />
-        <div class="subway-station">
-        ГЕОЛОГИЧЕСКАЯ
+      <div class="vl"></div>
+      <div class="mail-adress">
+        <div class="mail-adress__adress">Почта</div>
+        <div class="mail-adress__mail">info@plant.ru</div>
+        </div>
+    </div>
+    <div class="location">
+      <div class="country">РОССИЯ, ЕКАТЕРИНБУРГ</div>
+      <div class="street">620014, ВАЙНЕРА УЛ., Д. 66А </div>
+      <div class="subway">
+        <subwayIcon />
+        <div class="subway-station">ГЕОЛОГИЧЕСКАЯ</div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-  
-  
   <footerComponent />
 </template> 
 
@@ -50,11 +39,11 @@ export default {
 .contacts {
   color: black;
   height: 950px;
-}
-.contacts__big-contacts {
-  width: 100%;
-  height: 290px;
-  background-image: url(@/assets/img/bigContacts.jpg);
+  &__big-contacts {
+    width: 100%;
+    height: 290px;
+    background-image: url(@/assets/img/bigContacts.jpg);
+  }
 }
 .info {
   display: flex;
@@ -67,35 +56,34 @@ export default {
   display: flex;
   width: 20%;
   flex-direction: column;
-}
-.number {
-  font-size: 22px;
-  font-weight: 700;
-  font-family: "Roboto";
-  margin-left: auto;
-  padding: 2px;
-}
-.phone {
-  font-size: 17px;
-  margin-left: auto;
-  padding: 2px;
-  
+  &__number {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: "Roboto";
+    margin-left: auto;
+    padding: 2px;
+  }
+  &__phone {
+    font-size: 17px;
+    margin-left: auto;
+    padding: 2px;
+  }
 }
 .mail-adress {
   display: flex;
   width: 20%;
   flex-direction: column;
-}
-.mail {
-  font-size: 22px;
-  font-weight: 700;
-  margin-right: auto;
-  padding: 2px;
-}  
-.adress {
-  font-size: 17px;
-  margin-right: auto;
-  padding: 2px;
+  &__mail {
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: auto;
+    padding: 2px;
+  }  
+  &__adress {
+    font-size: 17px;
+    margin-right: auto;
+    padding: 2px;
+  }
 }
 .location {
   justify-content: space-around;

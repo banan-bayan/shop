@@ -135,7 +135,6 @@ $color-2: white;
   }
 }
 
-
 @media (max-width: 768px) {
   .footer {
     max-width: 768px;

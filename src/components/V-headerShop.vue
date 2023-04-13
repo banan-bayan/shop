@@ -83,21 +83,21 @@ export default {
     width: 70%;
     padding-left: $padding;
     padding-right: $padding;
-    padding-top: $padding * 3;
-    padding-bottom: $padding * 2;
+    padding-top: $padding;
+    padding-bottom: auto;
     &-contacts {
       padding: $padding;
       &-hr {
         width: 0%;
         border: none;
-        border-bottom: 1px solid $color-3;
+        border-bottom: 3px solid #38603C;
         transition: all 0.1s ease 0s;
         margin-left: auto;
         margin-right: auto;
       }
       &:hover .header__menu-contacts-hr--hover{
         width: 100%;
-        transition: all 0.4s ease 0s;
+        transition: all 0.1s ease 0s;
       }
     }
     &-advice {
@@ -105,14 +105,14 @@ export default {
       &-hr {
         width: 0%;
         border: none;
-        border-bottom: 1px solid $color-3;
+        border-bottom: 3px solid #38603C;
         transition: all 0.1s ease 0s;
         margin-left: auto;
         margin-right: auto;
       }
       &:hover .header__menu-advice-hr--hover{
         width: 100%;
-        transition: all 0.4s ease 0s;
+        transition: all 0.1s ease 0s;
       }
     }
     &-order {
@@ -120,14 +120,14 @@ export default {
       &-hr {
         width: 0%;
         border: none;
-        border-bottom: 1px solid $color-3;
+        border-bottom: 3px solid #38603C;
         transition: all 0.1s ease 0s;
         margin-left: auto;
         margin-right: auto;
       }
       &:hover .header__menu-order-hr--hover{
         width: 100%;
-        transition: all 0.4s ease 0s;
+        transition: all 0.1s ease 0s;
       }
     }
     &-catalog {
@@ -135,14 +135,14 @@ export default {
       &-hr {
         width: 0%;
         border: none;
-        border-bottom: 1px solid $color-3;
+        border-bottom: 3px solid #38603C;
         transition: all 0.1s ease 0s;
         margin-left: auto;
         margin-right: auto; 
       } 
       &:hover .header__menu-catalog-hr--hover{
         width: 100%;
-        transition: all 0.4s ease 0s;
+        transition: all 0.1s ease 0s;
       } 
     }
     &-link-to-order {

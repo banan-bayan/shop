@@ -1,7 +1,6 @@
 <template>
   <headerShop />
   <div class="cart__background-image"></div>
-  
   <div class="cart">
     <p class="cart__length-items"> <b class="cart__cart">Корзина</b> ( {{  CART.length }} ) </p>
     <p v-if="!CART.length"> There are no product in cart </p>
@@ -52,7 +51,6 @@ export default {
       NDS: 0.2
     }
   },
-  
   components: {cartItem, headerShop, footerComponent},
   props: {
     cart_data: {
@@ -62,9 +60,6 @@ export default {
       }
     }
   },
-  mounted() {
-    console.log()
-    },
   computed: {
     ...mapGetters([
       'CART'
@@ -93,27 +88,27 @@ export default {
   $padding: 8px;
   $margin: 8px;
 
-.cart__button-ordering {
-  background: #333434;
-  color: white;
-  font-size: 20px;
-  font-family: 'Raleway';
-  font-weight: 700;
-  border-radius: 10px;
-  height: 60px;
-  width: 80%;
-  margin-top: 80px;
-}
-.cart__background-image {
-  padding: 0;
-  margin-bottom: 30px;
-  width: 100%;
-  background-image: url(@/assets/img/bigCart.jpg);
-  height: 290px;
-}
 .cart {
   margin-left: 50px;
   min-height: 1000px;
+  &__button-ordering {
+    background: #333434;
+    color: white;
+    font-size: 20px;
+    font-family: 'Raleway';
+    font-weight: 700;
+    border-radius: 10px;
+    height: 60px;
+    width: 80%;
+    margin-top: 80px;
+  }
+  &__background-image {
+    padding: 0;
+    margin-bottom: 30px;
+    width: 100%;
+    background-image: url(@/assets/img/bigCart.jpg);
+    height: 290px;
+  }
   &__total {
     border-radius: 15px;
     background: white;
@@ -138,33 +133,32 @@ export default {
     font-family: 'Roboto';
     letter-spacing: 2px;
   }
-}
-.cart__cart {
-  color: rgb(0, 0, 0);
-  letter-spacing: 5px;
-}
-.cart__input {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  height: 60px;
-  font-size: 28px;
-  font-family: 'Raleway';
-  color: black;
-  background: white;
-  
-  -webkit-box-shadow: 0px -1px 17px -8px rgba(2, 2, 2, 0.67) inset;
-  -moz-box-shadow: 0px -1px 17px -8px rgba(2, 2, 2, 0.67) inset;
-  box-shadow: 0px -1px 17px -8px rgba(2, 2, 2, 0.67) inset;
-  margin-bottom: 50px;
-  margin-top: 30px;
-  border-radius: 8px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  &::placeholder {
+  &__cart {
+    color: rgb(0, 0, 0);
+    letter-spacing: 5px;
+  }
+  &__input {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    width: 60%;
+    height: 60px;
+    font-size: 28px;
+    font-family: 'Raleway';
     color: black;
-    font-size: .8rem;
-    font-family: 'Raleway'; 
+    background: white;
+    -webkit-box-shadow: 0px -1px 17px -8px rgba(2, 2, 2, 0.67) inset;
+    -moz-box-shadow: 0px -1px 17px -8px rgba(2, 2, 2, 0.67) inset;
+    box-shadow: 0px -1px 17px -8px rgba(2, 2, 2, 0.67) inset;
+    border-radius: 8px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    &::placeholder {
+      color: black;
+      font-size: .8rem;
+      font-family: 'Raleway'; 
+    }
   }
 }
 .total-cost {
@@ -238,7 +232,6 @@ export default {
     position: sticky;
     top: 0;
     right: 20px;
-
     }
     &__background-image {
      padding: 0;
@@ -246,7 +239,7 @@ export default {
      width: 100%;
      background-image: url(@/assets/img/bigCart.jpg);
      height: 190px;
-}
+    }
   }
 }
 
