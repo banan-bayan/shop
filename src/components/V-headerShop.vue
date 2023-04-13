@@ -1,6 +1,6 @@
 <template>
+  <p class="header__logo">plant</p>
   <div class="header">
-    <p class="header__logo">plant</p>
     <div class="header__menu">
       <router-link
         v-if="$route.path !== '/contacts'"
@@ -58,20 +58,26 @@ export default {
   $color-2: white;
   $color-3: grey;
 
+  
 .header {
+  padding-bottom: 0;
   background: $color-2;
   height: 100px;
   padding-top: 30px;
   display: flex;
   flex-wrap: wrap;
+  align-items: end;
   &__logo {
+    position:absolute;
+    left: 10px;
+    top: 5px;
     font-family: 'Mitr';
-    font-size: 60px;
+    font-size: 30px;
     color: #38603C;
-    margin-right: 60px;
-    margin-left: 10px;
   }
   &__menu { 
+    margin-left: auto;
+    margin-right: auto;
     height: 49px;
     font-size: 20px;
     color: $color-1;
@@ -80,7 +86,7 @@ export default {
     align-items: center;
     font-family: 'Raleway';
     font-weight: 400;
-    width: 70%;
+    width: 50%;
     padding-left: $padding;
     padding-right: $padding;
     padding-top: $padding;

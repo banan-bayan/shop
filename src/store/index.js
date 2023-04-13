@@ -5,7 +5,6 @@ export default createStore({
   state: {
     products: [],
     cart: [],
-    isVisible: false,
     advices: []
   },
 
@@ -16,17 +15,12 @@ export default createStore({
     CART(state) { 
       return state.cart 
     },
-    DROP_MENU(state) {
-      return state.isVisible
-    },
     ADVICES(state) {
       return state.advices
     }
   },
 
   mutations: {
-    TOGGLE_VISIBLE: (state) => state.isVisible = !state.isVisible,
-
     SET_PRODUCTS_TO_STATE: (state, products) => state.products = products,
 
     SET_ADVICES_TO_STATE: (state, advices) => state.advices = advices,

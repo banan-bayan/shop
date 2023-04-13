@@ -41,7 +41,7 @@ export default {
   },
   mounted() {
     this.GET_PRODUCTS_FROM_API()
-       .then((response) =>  response.data ? console.log('DONE') : console.log('ERROR'));
+      .then((response) =>  response.data ? console.log('DONE') : console.log('ERROR'));
   },
   methods: {
     ...mapActions([
