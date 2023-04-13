@@ -1,5 +1,7 @@
 <template>
+  <!--
   <p class="header__logo">plant</p>
+  -->
   <div class="header">
     <div class="header__menu">
       <router-link
@@ -43,10 +45,25 @@
       </router-link>
     </div>
   </div>
+  <cart-icon />
+  <router-link :to="{name: 'cart'}">
+    <p class="county-items-in-header" 
+      v-if="CART.length"
+    >  {{  CART.length }}
+    </p>
+  </router-link>
 </template> 
 
 <script>
+import cartIcon from "@/components/icons/MenuCart.vue";
+import { mapGetters} from "vuex";
 export default {
+  components: {cartIcon,},
+  computed: {
+    ...mapGetters([
+      'CART'
+    ]),
+  }
 }
 
 </script>
@@ -62,7 +79,7 @@ export default {
 .header {
   padding-bottom: 0;
   background: $color-2;
-  height: 100px;
+  height: 70px;
   padding-top: 30px;
   display: flex;
   flex-wrap: wrap;
@@ -172,5 +189,14 @@ export default {
       padding: $padding;
     }
   }
+}
+.county-items-in-header {
+  position:absolute;
+  top: 41px;
+  right: 31px;
+  color: rgba($color: #ed3636, $alpha: 1.0);
+  font-weight: 700;
+  font-size: 11px;
+  font-family: 'Roboto';
 }
 </style>  

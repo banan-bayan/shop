@@ -89,8 +89,14 @@ $color-3: grey;
   -moz-box-shadow: 0px 0px 6px 3px rgba(153, 155, 157, 0.56);
   box-shadow: 0px 0px 6px 3px rgba(153, 155, 157, 0.56);
   height: 100%;
+  &:hover {
+    border: 5px solid $color-1;
+    }
+  &:active {
+    box-shadow: 0px 0px 10px 0px rgb(2, 65, 32);
+  }
   &__image {
-    border-radius: $radius;
+    border-radius: 1px;
   }
   &__add-to-cart-btn {
     height: 89%;

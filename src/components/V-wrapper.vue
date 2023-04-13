@@ -22,7 +22,7 @@ export default {
 .v-wrapper {
   max-width: 100%;
   background: rgb(233, 232, 232);
-  margin: 0px 10px;
+ // margin: 0px 10px;
 }
 @media (max-width: 1200px) {
   .v-wrapper {

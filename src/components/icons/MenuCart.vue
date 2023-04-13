@@ -2,8 +2,8 @@
 <template>
   <svg 
     class="svg-cart"
-    width="28" 
-    height="28" 
+    width="30" 
+    height="30" 
     viewBox="0 0 28 28" 
     fill="none" 
     xmlns="http://www.w3.org/2000/svg">
@@ -19,10 +19,19 @@ export default {}
 </script>
 
 <style>
-
+/*
   .svg-cart:active path{
     fill: #fff;
-    color: #d1cfcf;
+    color: rgba(121, 121, 121, 0.7);
     transition: all 0s ease 0s;
+  }
+  */
+  .svg-cart {
+    position: absolute;
+    top: 37px;
+    right: 20px;
+  }
+  path {
+    fill: rgba(121, 121, 121, 0.6);
   }
 </style>
