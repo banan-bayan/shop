@@ -100,11 +100,12 @@ export default {
     &-increment {
       font-size: 22px;
       font-family: 'Roboto';
+      cursor: pointer;
     }
     &-decrement {
       font-size: 32px;
       font-family: 'Roboto';
-      
+      cursor: pointer;
     }
   }
   &__price {

@@ -41,7 +41,7 @@ export default createStore({
     REMOVE_FROM_CART: (state, index) => state.cart.splice(index, 1),
 
     INCREMENT : (state, index) => {
-      if (state.cart[index].quantity > 1) {
+      if (state.cart[index].quantity > 0) {
         state.cart[index].quantity--
       }
       
