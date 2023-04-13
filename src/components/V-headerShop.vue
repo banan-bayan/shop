@@ -45,8 +45,8 @@
       </router-link>
     </div>
   </div>
-  <cart-icon />
   <router-link :to="{name: 'cart'}">
+    <cart-icon />
     <p class="county-items-in-header" 
       v-if="CART.length"
     >  {{  CART.length }}

@@ -8,7 +8,9 @@
       v-for="(item, index) in CART"
       :key="item.id"
       :cart_item_data="item"
-      @deleteFromCart="deleteFromCart(index)" 
+      @deleteFromCart="deleteFromCart(index)"
+      @increment="increment(index)"
+      @decrement="decrement(index)"
     />
     <div class="cart__total">
       <h3 class="order-summary">Итог заказа</h3>
@@ -75,10 +77,18 @@ export default {
   },
   methods: {
     ...mapActions([
-      'DELETE_FROM_CART'
+      'DELETE_FROM_CART',
+      'ICREMENT_CART_ITEM',
+      'DECREMENT_CART_ITEM',
     ]),
     deleteFromCart(index) {
       this.DELETE_FROM_CART(index)
+    },
+    increment(index) {
+      this.ICREMENT_CART_ITEM(index)
+    },
+    decrement(index) {
+      this.DECREMENT_CART_ITEM(index)
     }
   }
 }

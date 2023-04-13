@@ -6,14 +6,12 @@
       <div class="cart-item__quantity">
       <span 
         class="cart-item__quantity-decrement"
-        @click="decrementItem"
+        @click="incrementItem "
       > - </span>
-
         {{ cart_item_data.quantity }} 
-
       <span
         class="cart-item__quantity-increment"
-        @click="incrementItem"
+        @click="decrementItem"
       > + </span>
     </div>
       <p class="cart-item__price"> {{ cart_item_data.price }} &#8381  </p>
@@ -36,18 +34,15 @@ export default {
       }
     }
   },
-  mounted() {
-    
-  },
   methods: {
     deleteFromCart() {
       this.$emit('deleteFromCart')
     },
     decrementItem() {
-
+      this.$emit('decrement');
     },
     incrementItem() {
-
+      this.$emit('increment');
     }
   }
 }
@@ -104,10 +99,12 @@ export default {
     font-size: 22px;
     &-increment {
       font-size: 22px;
+      font-family: 'Roboto';
     }
     &-decrement {
-      align-self: flex-start;
-      font-size: 22px;
+      font-size: 32px;
+      font-family: 'Roboto';
+      
     }
   }
   &__price {
